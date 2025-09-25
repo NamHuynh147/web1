@@ -7,6 +7,9 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="css/content/mainlayout.css" rel="stylesheet" />
   <style>
+    body {
+      padding-top: 70px; /* Prevent content from hiding behind fixed navbar */
+    }
     .carousel-item {
       position: relative;
     }
@@ -32,99 +35,222 @@
       height: 220px;
       object-fit: cover;
     }
+
+
+
+}
+
+.image-list {
+  position: absolute;
+  margin: 0;
+  padding: 0;
+}
+
+.image-list li {
+  text-align: center;
+  display: inline-block;
+  list-style: none;
+  position: relative;
+  border: solid 12px #fff;
+  background: #fff;
+  box-shadow: 0 0 15px 0px #555;
+  transition: all 1s ease;
+  top: 50px;
+}
+
+.image-list li:hover {
+  top: 0px;
+  opacity: 0.5;
+}
+
+.image-list li:nth-child(1) {
+  transform: rotate(10deg);
+}
+.image-list li:nth-child(2) {
+  transform: rotate(0deg);
+}
+.image-list li:nth-child(3) {
+  transform: rotate(-10deg);
+}
+.image-list li:nth-child(4) {
+  transform: rotate(20deg);
+}
+
+.image-list p {
+  margin: -15px 0 0 0;
+}
+
+.light {
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  width: 700px;
+  height: 700px;
+  background: #fff;
+  filter: blur(100px);
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+
   </style>
 </head>
 <body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top shadow">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#themeSlider"><strong>WebBanXeMay</strong></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#themeSlider">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#saleSection">For Sale</a></li>
+          <li class="nav-item"><a class="nav-link" href="#gallerySection">Gallery</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
   <!-- Carousel -->
   <div id="themeSlider" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
         <div class="imgOverlay"></div>
-        <img src="images/background.jpg" class="d-block w-100" style="height:600px;" alt="Banner">
+        <img src="images/carousel1.jpg" class="d-block w-100" style="height:600px;" alt="Slide 1">
         <div class="carousel-caption">
           <h3>Welcome to WebBanXeMay</h3>
           <p>Find your perfect ride today.</p>
         </div>
       </div>
+      <div class="carousel-item">
+        <div class="imgOverlay"></div>
+        <img src="images/carousel2.jpg" class="d-block w-100" style="height:600px;" alt="Slide 2">
+        <div class="carousel-caption">
+          <h3>Top Brands</h3>
+          <p>Explore our premium selection.</p>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="imgOverlay"></div>
+        <img src="images/carousel3.jpg" class="d-block w-100" style="height:600px;" alt="Slide 3">
+        <div class="carousel-caption">
+          <h3>Ready to Ride</h3>
+          <p>Affordable and stylish options.</p>
+        </div>
+      </div>
     </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#themeSlider" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#themeSlider" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
 
-  <!-- Product Listing -->
-  <div class="container mt-5" id="productListing">
-    <h2 class="mb-4">Our Motorcycles</h2>
+  <!-- Motorbikes for Sale -->
+  <div class="container mt-5" id="saleSection">
+    <h2 class="mb-4">Motorbikes for Sale</h2>
     <div class="row row-cols-1 row-cols-md-3 g-4">
 
-      <!-- Product Cards -->
-      <script>
-        const products = [
-          { name: "AirBlade", price: "40,000,000", desc: "Stylish and efficient", img: "AirBlade.jpg" },
-          { name: "Piaggio Liberty", price: "55,000,000", desc: "Italian elegance", img: "PiaggioLiberty.jpg" },
-          { name: "Suzuki Raider", price: "42,000,000", desc: "Lightweight performance", img: "SuzukiRaider.jpg" },
-          { name: "VinFast Klara", price: "35,000,000", desc: "Eco-friendly electric", img: "VinfatsKlara.jpg" },
-          { name: "Yamaha Exciter", price: "45,000,000", desc: "Sporty and reliable", img: "YamahaExciter.jpg" },
-          { name: "Xe 1", price: "38,000,000", desc: "Compact and agile", img: "xe1.jpg" },
-          { name: "Xe 2", price: "39,000,000", desc: "Urban commuter", img: "xe2.jpg" },
-          { name: "Xe 3", price: "41,000,000", desc: "Versatile design", img: "xe3.jpg" },
-          { name: "Xe 4", price: "43,000,000", desc: "Comfort and style", img: "xe4.jpg" },
-          { name: "Xe 5", price: "44,000,000", desc: "Smooth ride", img: "xe5.jpg" },
-          { name: "Xe 6", price: "46,000,000", desc: "Powerful engine", img: "xe6.jpg" },
-          { name: "Xe 7", price: "47,000,000", desc: "Premium build", img: "xe7.jpg" }
-        ];
-
-        document.write(products.map(p => `
-          <div class="col">
-            <div class="card h-100">
-              <img src="images/${p.img}" class="card-img-top" alt="${p.name}">
-              <div class="card-body d-flex flex-column">
-                <h5 class="card-title">${p.name}</h5>
-                <p class="card-text price">${p.price} VND</p>
-                <p class="card-text">${p.desc}</p>
-                <div class="mt-auto">
-                  <button class="btn btn-primary w-100">Mua</button>
-                </div>
-              </div>
+      <!-- Full-name bikes -->
+      <div class="col">
+        <div class="card h-100">
+          <img src="images/AirBlade.jpg" class="card-img-top" alt="AirBlade">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">AirBlade</h5>
+            <p class="card-text price">40,000,000 VND</p>
+            <p class="card-text">Stylish and efficient.</p>
+            <div class="mt-auto">
+              <button class="btn btn-primary w-100">Mua</button>
             </div>
           </div>
-        `).join(''));
-      </script>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100">
+          <img src="images/PiaggioLiberty.jpg" class="card-img-top" alt="Piaggio Liberty">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Piaggio Liberty</h5>
+            <p class="card-text price">55,000,000 VND</p>
+            <p class="card-text">Italian elegance and comfort.</p>
+            <div class="mt-auto">
+              <button class="btn btn-primary w-100">Mua</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100">
+          <img src="images/SuzukiRaider.jpg" class="card-img-top" alt="Suzuki Raider">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Suzuki Raider</h5>
+            <p class="card-text price">42,000,000 VND</p>
+            <p class="card-text">Lightweight and high performance.</p>
+            <div class="mt-auto">
+              <button class="btn btn-primary w-100">Mua</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100">
+          <img src="images/VinfastKlara.jpg" class="card-img-top" alt="Vinfast Klara">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Vinfast Klara</h5>
+            <p class="card-text price">35,000,000 VND</p>
+            <p class="card-text">Eco-friendly electric scooter.</p>
+            <div class="mt-auto">
+              <button class="btn btn-primary w-100">Mua</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="card h-100">
+          <img src="images/YamahaExciter.jpg" class="card-img-top" alt="Yamaha Exciter">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">Yamaha Exciter</h5>
+            <p class="card-text price">45,000,000 VND</p>
+            <p class="card-text">Sporty and reliable.</p>
+            <div class="mt-auto">
+              <button class="btn btn-primary w-100">Mua</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
     </div>
   </div>
+
+<div class="container mt-5" id="gallerySection">
+    <h2 class="mb-4">Motorbike Gallery</h2>
+    
+
+
+
+
+<ul class="image-list">
+  <li><img src="images/xe1.jpg" width="200"></li>
+  <li><img src="images/xe2.jpg" width="200"></li>
+  <li><img src="images/xe4.jpg" width="200"></li>
+  <li><img src="images/xe7.jpg" width="200"></li>
+</ul>
+
+
+  </div>
+</div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-``>
-
----
-
-#### 4. **Incorrect HTML Structure**
-The carousel must follow Bootstrap’s structure exactly. Here’s a working example:
-
-```html
-<div id="themeSlider" class="carousel slide" data-bs-ride="carousel">
-  <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img src="images/xe1.jpg" class="d-block w-100" alt="Xe 1">
-    </div>
-    <div class="carousel-item">
-      <img src="images/xe2.jpg" class="d-block w-100" alt="Xe 2">
-    </div>
-    <div class="carousel-item">
-      <img src="images/xe3.jpg" class="d-block w-100" alt="Xe 3">
-    </div>
-  </div>
-
-  <button class="carousel-control-prev" type="button" data-bs-target="#themeSlider" data-bs-slide="prev">
-    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Previous</span>
-  </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#themeSlider" data-bs-slide="next">
-    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="visually-hidden">Next</span>
-  </button>
-</div>
 </html>
-
-
