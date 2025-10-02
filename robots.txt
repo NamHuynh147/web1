@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://namhuynh47.github.io/web1/sitemap.xml
