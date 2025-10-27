@@ -1,4 +1,4 @@
-﻿
+
 @import url(font-awesome.css);
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condense:400,700,300');
 body {
@@ -31,6 +31,31 @@ h1, h2, h3, h4, h5, h6 {
     -ms-transition: all 0.3s ease-in-out, text-decoration 0.5s ease-in-out;
     -o-transition: all 0.3s ease-in-out, text-decoration 0.5s ease-in-out;
     transition: all 0.3s ease-in-out, text-decoration 0.5s ease-in-out;
+}
+.useful-links {
+  padding: .75rem 0;
+}
+.useful-links nav ul.list-inline { margin: 0; padding: 0; }
+.useful-links .list-inline-item { margin: 0 .5rem; }
+.useful-links a {
+  color: #0d6efd;
+  text-decoration: none;
+  padding: .35rem .6rem;
+  border-radius: .35rem;
+  transition: background .18s, color .18s, transform .15s, box-shadow .18s;
+  display: inline-block;
+  font-weight: 500;
+}
+.useful-links a:hover,
+.useful-links a:focus {
+  background: rgba(13,110,253,0.08);
+  color: #0a58ca;
+  transform: translateY(-2px);
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(13,110,253,0.08);
+}
+@media (max-width:576px){
+  .useful-links .list-inline-item { display: block; margin: .25rem 0; }
 }
 .logo h1 a:hover,
 .logo h2 a:hover {
@@ -113,7 +138,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Optional: styling for action links */
 .topnav a, .topnav .btn-link {
-    /*color: #f2f2f2*/;
+    /*color: #f2f2f2*/
     text-decoration: none;
     font-size: 17px;
     padding: 8px;
@@ -175,7 +200,7 @@ CONTROL
     .carousel-control .icon-next,
     .carousel-control .fa-chevron-left,
     .carousel-control .fa-chevron-right {
-        position: absolute;
+        position: flex;
         top: 47%;
         right: 0;
         z-index: 5;
@@ -438,95 +463,9 @@ CONTROL
         object-fit: cover;
     }
 
-/* Ensure images within cards 100% width */
+/* Ensure  s within cards 100% width */
 .card img {
     width: 100%;
     object-fit: cover;
 }
 /* Container styling for the registration form */
-.registration-container {
-    max-width: 600px;
-    margin: 2rem auto;
-    padding: 2rem;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-    .registration-container h1 {
-        text-align: center;
-        margin-bottom: 1rem;
-        color: #333;
-    }
-
-/* Form spacing and layout */
-.registration-form .form-group {
-    margin-bottom: 1.25rem;
-}
-
-/* Labels */
-.registration-form label {
-    font-weight: 600;
-    color: #555;
-}
-
-/* Input fields */
-.registration-form .form-control {
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    padding: 0.5rem;
-    font-size: 16px;
-    width: 100%;
-}
-
-/* Validation summary and error messages */
-.registration-form .text-danger {
-    font-size: 0.875rem;
-}
-
-/* Submit Button */
-.registration-form .btn-primary {
-    background-color: #4CAF50; /* Green color for submit button */
-    border: none;
-    border-radius: 4px;
-    color: #fff;
-    font-size: 18px;
-    padding: 0.75rem;
-    width: 100%;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-    .registration-form .btn-primary:hover {
-        background-color: #45a049;
-    }
-
-/* Link styling */
-.registration-container a {
-    color: #4CAF50;
-    text-decoration: none;
-    font-size: 16px;
-}
-
-    .registration-container a:hover {
-        text-decoration: underline;
-    }
-html {
-    scroll-behavior: smooth;
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
