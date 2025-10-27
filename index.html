@@ -145,6 +145,26 @@ footer {
   transition:transform .18s ease, box-shadow .18s ease, background .18s ease;
   font-size:1rem;
 }
+.about p {
+      font-size: 1.05rem;
+      line-height: 1.6;
+      color: #333;
+      text-align: justify;
+      margin-bottom: 1rem;
+    }
+    .about p:first-child {
+      text-indent: 1.6rem;
+    }
+    .about p em {
+      color: #555;
+      font-style: italic;
+    }
+    @media (max-width: 576px) {
+      .about p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+      }
+    }
 .social-icon-link:hover { transform:translateY(-4px); box-shadow:0 8px 20px rgba(0,0,0,.15); }
 .social-icon-link.social-x { background:#1b1f23; }
 .social-icon-link.social-x:hover { background:#0b0d0e; }
@@ -168,7 +188,7 @@ footer {
 }
 /* nhỏ gọn các icon bên trong */
 footer .container { padding-top: .25rem; padding-bottom: .25rem; }
-</style>
+  </style>
 </head>
 <body>
 <div class = "nav-bar" position = "fixed-top">
@@ -233,13 +253,17 @@ footer .container { padding-top: .25rem; padding-bottom: .25rem; }
 
     <button class="carousel-control-prev" type="button" data-bs-target="#themeSlider" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
+      <span class="visually-hidden">Trước</span>
     </button>
     <button class="carousel-control-next" type="button" data-bs-target="#themeSlider" data-bs-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
+      <span class="visually-hidden">Sau</span>
     </button>
   </div>
+  <p class="visually-hidden">
+  WebBanXeMay là nơi bạn có thể khám phá, so sánh và mua sắm những mẫu xe máy đẹp, giá rẻ từ nhiều thương hiệu uy tín tại Việt Nam. 
+  Chúng tôi mang đến cho bạn trải nghiệm mua sắm trực tuyến tiện lợi, nhanh chóng và đáng tin cậy.
+</p>
 
   <!-- Xe đang bán -->
   <div class="container mt-5" id="saleSection">
@@ -263,7 +287,7 @@ footer .container { padding-top: .25rem; padding-bottom: .25rem; }
 
       <div class="col">
         <div class="card h-100">
-          <img src="images/PiaggioLiberty.jpg" class="card-img-top" alt="mua xe Piaggio Liberty">
+          <img src="images/PiaggioLiberty.jpg" class="card-img-top" alt="Piaggio Liberty - xe máy sang trọng" loading="lazy">
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">Piaggio Liberty</h5>
             <p class="card-text price">55.000.000 VND</p>
@@ -277,7 +301,7 @@ footer .container { padding-top: .25rem; padding-bottom: .25rem; }
 
       <div class="col">
         <div class="card h-100">
-          <img src="images/SuzukiRaider.jpg" class="card-img-top" alt="mua xe Suzuki Raider">
+          <img src="images/SuzukiRaider.jpg" class="card-img-top" alt="Suzuki Raider - xe máy thể thao" loading="lazy">
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">Suzuki Raider</h5>
             <p class="card-text price">42.000.000 VND</p>
@@ -291,7 +315,7 @@ footer .container { padding-top: .25rem; padding-bottom: .25rem; }
 
       <div class="col">
         <div class="card h-100">
-          <img src="images/VinfastKlara.jpg" class="card-img-top" alt="mua xe Vinfast Klara">
+          <img src="images/VinfastKlara.jpg" class="card-img-top" alt="VinFast Klara - xe điện thân thiện với môi trường" loading="lazy">
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">VinFast Klara</h5>
             <p class="card-text price">35.000.000 VND</p>
@@ -305,7 +329,7 @@ footer .container { padding-top: .25rem; padding-bottom: .25rem; }
 
       <div class="col">
         <div class="card h-100">
-          <img src="images/YamahaExciter.jpg" class="card-img-top" alt="mua xe Yamaha Exciter">
+          <img src="images/YamahaExciter.jpg" class="card-img-top" alt="Yamaha Exciter - xe máy thể thao" loading="lazy">
           <div class="card-body d-flex flex-column">
             <h5 class="card-title">Yamaha Exciter</h5>
             <p class="card-text price">45.000.000 VND</p>
@@ -323,12 +347,27 @@ footer .container { padding-top: .25rem; padding-bottom: .25rem; }
 <div class="container mt-5" id="gallerySection">
     <h2 class="mb-4">Bộ sưu tập xe máy</h2>
       <ul class="image-list" position = "relative">
-        <li><img src="images/xe1.jpg" width="200"></li>
-        <li><img src="images/xe2.jpg" width="200"></li>
-        <li><img src="images/xe4.jpg" width="200"></li>
-        <li><img src="images/xe7.jpg" width="200"></li>
+        <li><img src="images/xe1.jpg" width="200" alt="Hình ảnh xe máy 1"></li>
+        <li><img src="images/xe2.jpg" width="200" alt="Hình ảnh xe máy 2"></li>
+        <li><img src="images/xe4.jpg" width="200" alt="Hình ảnh xe máy 4"></li>
+        <li><img src="images/xe7.jpg" width="200" alt="Hình ảnh xe máy 7"></li>
       </ul>
   </div>
+
+  <div class="container mt-5">
+  <h2 class="mb-4">Tại sao nên chọn WebBanXeMay?</h2>
+  <div class="about">
+    <p>
+      WebBanXeMay không chỉ là nơi để bạn tìm kiếm những chiếc xe máy đẹp và giá rẻ, mà còn là một nền tảng đáng tin cậy giúp bạn đưa ra quyết định mua sắm thông minh. Chúng tôi cung cấp thông tin chi tiết về từng mẫu xe, bao gồm thông số kỹ thuật, đánh giá từ người dùng và các ưu đãi đặc biệt.
+    </p>
+    <p>
+      Với đội ngũ chuyên gia giàu kinh nghiệm trong ngành công nghiệp xe máy, chúng tôi cam kết mang đến cho bạn những sản phẩm chất lượng nhất. Bạn có thể dễ dàng so sánh các mẫu xe khác nhau để tìm ra chiếc xe phù hợp nhất với nhu cầu và ngân sách của mình.
+    </p>
+    <p>
+      Ngoài ra, chúng tôi còn cung cấp dịch vụ hỗ trợ khách hàng tận tình, giúp bạn giải đáp mọi thắc mắc liên quan đến sản phẩm và dịch vụ của chúng tôi. Hãy để WebBanXeMay đồng hành cùng bạn trong hành trình tìm kiếm chiếc xe máy lý tưởng!
+    </p>
+  </div>
+</div>
 </main>
 <footer class="py-4" >
   <div class="container mt-5 mb-4" id="contact">
